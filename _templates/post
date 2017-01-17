@@ -1,0 +1,10 @@
+---
+layout: {{ layout }}
+title: "{{ title }}"
+date: {{ date }}
+author: dikiaap
+sitemap: false
+keywords: ""
+description: ""
+---
+<!--more-->
