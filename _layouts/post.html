@@ -13,10 +13,10 @@ comment: true
     {{ content }}
     <nav class="article-previous fn-clear">
         {% if page.previous %}
-        <a class="prev" href="{{ BASE_PATH }}/blog/{{ page.previous.url }}" rel="bookmark">&laquo;&nbsp;{{ page.previous.title | truncatewords:5 }}</a>
+        <a class="prev" href="{{ BASE_PATH }}/blog{{ page.previous.url }}" rel="bookmark">&laquo;&nbsp;{{ page.previous.title | truncatewords:5 }}</a>
         {% endif %}
         {% if page.next %}
-        <a class="next" href="{{ BASE_PATH }}/blog/{{ page.next.url }}" rel="bookmark">{{ page.next.title | truncatewords:5 }}&nbsp;&raquo;</a>
+        <a class="next" href="{{ BASE_PATH }}/blog{{ page.next.url }}" rel="bookmark">{{ page.next.title | truncatewords:5 }}&nbsp;&raquo;</a>
         {% endif %}
     </nav>
     <div class="comment">
