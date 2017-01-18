@@ -1,62 +1,14 @@
-# Mangan
+##Kunka
 
-[![Build Status](https://img.shields.io/travis/dikiaap/mangan/master.svg?style=flat-square)](https://travis-ci.org/dikiaap/mangan)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/dikiaap/mangan)
+> 这只是另外一个 Jekyll 主题文件。
 
-![image](http://i.imgur.com/dgzKZlq.png)
+![kunka blog theme](images/blog.jpg)
 
-## Requirements
-- Ruby >= 2.1
-- [RubyGems](http://rubygems.org/pages/download)
-- Linux, Unix, or Mac OS X
-- Git
+###使用方法
 
-## Install
+* 把主题文件 clone 到你本地服务器
+* 使用```rake post title="title name"```自动添加文章到 ```_posts``` 文件夹。
+* 修改 ```_config.yml```，里面有很多可以配置的选项。
+* 运行 ```jekyll serve```，浏览器打开 http://localhost:4000 便可以看到新的主题。
 
-**Note** : Follow this steps until done and your website will be online.
-
-Fork, then rename to `username.github.io` and clone to your computer.
-
-```shell
-git clone https://github.com/username/username.github.io.git
-cd username.github.io
-sudo gem install jekyll jekyll-paginate jekyll-sitemap
-sudo gem install jemoji octopress
-octopress new post "Your post"
-jekyll build
-jekyll serve
-```
-
-If looks good, then deploy to GitHub.
-
-```shell
-git add -u
-git add .
-git commit -m "Message"
-git push
-```
-
-Visit your website now and custom what you want! :sparkles:
-
-## What's in there?
-
- * Beauty, minify and litle awesome code
- * Emoji support
- * Geek theme
- * Instagram view
- * Pagination
- * SEO directly used
- * Speed up
- * Unique and secret fun in code and webview
- * URI
- * More!
-
-## Demo
-
-See demo [here](https://mangan.dikiaap.id).
-
-More feature, you can visit [jekyllrb.com](http://jekyllrb.com).
-
-## License
-
-MIT © [Diki Andriansyah](https://dikiaap.id)
+更多的介绍，详见[Jekyll 博客主题 Kunka](http://www.zhanxin.info/jekyll/2013-08-11-jekyll-theme-kunka.html)。

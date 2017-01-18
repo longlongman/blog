@@ -1,26 +1,119 @@
-# Site settings ...
-uri: domain.com
-url: https://domain.com
-name: Your name
-title: Mangan
-email: 1050466028@qq.com
-author: LongLongMan
-baseurl: ""
-keywords: "Your, Keyword, Here"
-description: "welcome"
-social_username: username
+# Where things are
+source:       .
+destination:  ./_site
+plugins_dir:      ./_plugins
+layouts_dir:      ./_layouts
+gems:  [jekyll-paginate]
+paginate:     8
 
-# Build settings ...
-sass:
-  style: compressed
-markdown: kramdown
-encoding: "utf-8"
-paginate: 5
-permalink: /post/:title
-paginate_path: "/page/:num/"
+# Handling Reading
+safe:         false
+include:      [".htaccess"]
+exclude:      []
+keep_files:   [".git", ".svn"]
+encoding:     "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+textile_ext:  "textile"
 
-# Plugins ...
-gems:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jemoji
+# Filtering Content
+show_drafts:  null
+limit_posts:  0
+future:       true
+unpublished:  false
+
+# Conversion
+markdown:     kramdown
+highlighter:  rb-pygments
+lsi:          false
+excerpt_separator: "\n\n"
+
+# Serving
+detach:       false
+port:         4000
+host:         127.0.0.1
+baseurl:      "" # does not include hostname
+
+# Outputting
+permalink:     date
+paginate_path: /page:num
+timezone:      null
+
+
+#Site config
+title: Jekyll Theme
+description: Just another Jekyll theme design and code by zhanxin.info.
+keywords: Jekyll Theme
+url: http://pizn.github.io/kunka
+feed: /atom.xml
+favicon: http://jekyllrb.com/favicon.png
+
+#Nav config
+nav:
+  - text: 首页
+    url: /index.html
+  - text: 分类目录 
+    url: /categories.html
+  - text: 文章归档
+    url: /archives.html
+  - text: 联系我
+    url: /contact.html
+  - text: 友情链接
+    url: /links.html
+
+#Author config
+author:
+    name: 龙某
+    email: 1050466028@qq.com
+    imageLink: /images/head.jpg
+    simpleIntro: 写码、交友、读书
+    detailIntro:
+      <p>这是使用Jekyll开发的一个个人博客，主题来自<a href="https://github.com/pizn">掌心</a>开发,感谢掌心大大制作了一个这么好的主题。</p>
+      <p>这是我的第一个博客希望大家能够过来看看，同时也希望和大家一起学习，不忘初心，方得始终。</p>
+
+#Follow me, you can choose your icon by http://fortawesome.github.io/Font-Awesome/icons/#brand
+follow:
+  - class: icon-rss
+    url: /atom.xml
+  - class: icon-weibo
+    url: http://weibo.com/2683524000/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1
+  - class: icon-renren
+    url: http://renren.com
+  - class: icon-github-alt
+    url: https://github.com/longlongman
+  - class: icon-twitter
+    url: http://twitter.com
+  - class: icon-google-plus
+    url: http://google.com
+
+#Links
+customLinks:
+  - item:
+    - text: 掌心
+      url: http://www.zhanxin.info
+    - text: Jekyll
+      url: http://jekyllrb.com
+    - text: Jekyll Theme
+      url: http://www.zhanxin.info/themes.html
+    message: Friends
+  - item:
+    - text: Font Awesome
+      url: http://fortawesome.github.io/Font-Awesome/
+    - text: Google Font
+      url: http://www.google.com/fonts/
+    - text: jQuery
+      url: http://jquery.com/
+    message: 其他相关链接
+
+#googleAnaly, your id link UA-12345678-X
+googleAnaly:
+  config: true
+  id: UA-40169250-1
+
+#comment config
+disqus:
+  config: false
+  id: piznblog
+
+duoshuo:
+  config: true
+  id: zhanxin
