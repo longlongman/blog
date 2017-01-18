@@ -64,7 +64,7 @@ nav:
 author:
     name: 龙思宇
     email: 1050466028@qq.com
-    imageLink: /images/head.jpg
+    imageLink: https://github.com/longlongman/blog/blob/gh-pages/images/head.jpg
     simpleIntro: 写码、交友、读书
     detailIntro:
       <p>这是使用Jekyll开发的一个个人博客，主题来自<a href="https://github.com/pizn">掌心</a>开发,感谢掌心大大制作了一个这么好的主题。</p>
