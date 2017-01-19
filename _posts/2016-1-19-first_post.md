@@ -25,4 +25,4 @@ category: 随记
 <ul>
 	<li>
 		湘南が远くなっていく by 七尾旅人<br>
-		<embed src="http://www.xiami.com/widget/0_1771205824/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent"></li>
+		<embed src="https://www.xiami.com/widget/0_1771205824/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent"></embed></li>
