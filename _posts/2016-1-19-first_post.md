@@ -2,7 +2,7 @@
 layout: post
 title: 第一篇文章
 date: 2017-1-19 19:56:55
-category: 随记
+category: "随记"
 ---
 <h2>这部分随便说说啦，没有主题的</h2>
 <p>这是我的真正的第一篇博客，上来测试一下博客的功能如何，顺便熟悉一下html的语法。其实更多的就是和标题写的一样，发发无聊的状态罢了。</p>
@@ -28,3 +28,4 @@ category: 随记
 		<embed src="https://www.xiami.com/widget/0_1771205824/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent"></li>
 	<li>Your Firefly by Ben Cocks<br>
 		<embed src="https://www.xiami.com/widget/0_1770306798/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent"></li>
+</ul>
