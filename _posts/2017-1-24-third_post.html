@@ -12,6 +12,34 @@ category: "reading"
 <p>先上个图告诉大家，我这两天学习了哪些内容吧。</p>
 <img src="https://raw.githubusercontent.com/longlongman/blog/gh-pages/images/seven_days/day_2_3.png">
 
+<h2>决策树</h2>
 <p>这两天主要看了第三章和第四章，分别是两种分类算法，决策树和朴素贝叶斯。先说决策树吧，其实很好理解，既然名字里有个树字，那我们就很自然地会想到它会有一些树都有的结构和概念，像是节点、叶子等等，整棵树除了叶子节点外都是我们特征，我们根据特征的值的不同，划分数据集，这样说好像还是太抽象了，附上一张从度娘那里拿来的一张图。</p>
 <img src="http://image84.360doc.com/DownloadImg/2015/03/3111/51822909_1.png">
 <p>图中那些拥有房产、已婚、年收入都是我们的特征，而我们的决策树上的叶子则是我们想要分类的结果，对于一个新的对象，我们只要按照决策树找到相应的特征，再按照相对应特征的值，一步步就能知道对象是属于那一类的了。</p>
+<p>其实相较于决策树的理解我觉得其中的一个子问题更加值得关注，那就是在构造决策树的时候对数据集如何进行划分，要讨论这个问题首先要引入两个概念：</p>
+<ul>
+	<li>香农熵
+		<p>它其实是一个数学期望，如果待分类的事物可能被划分在多个分类之中，则符号<img src="http://latex.codecogs.com/gif.latex?xi"/>的信息我们定义为：
+		<img src="http://latex.codecogs.com/gif.latex?l(xi)=-\log_{2}p(xi)"/>，其中<img src="http://latex.codecogs.com/gif.latex?p(xi)"/>是选择该类的概率。我们的香农熵就是这些信息的期望，定义为：
+		<p><img src="http://latex.codecogs.com/gif.latex?H=-\sum_{i=1}^{n}p(xi)\log_{2}p(xi)"/></p>
+		<p>其中<img src="http://latex.codecogs.com/gif.latex?n"/>是我们分类的总数。值得一提的是香农熵越大，信息混杂程度越高，信息越无序。</p></p>
+	</li>
+	<li>信息增益
+		<p>它的定义为：假定某个状态下系统的香农熵为<img src="http://latex.codecogs.com/gif.latex?H(Y)"/>，再引入某个特征<img src="http://latex.codecogs.com/gif.latex?X"/>后的信息熵为<img src="http://latex.codecogs.com/gif.latex?H(Y|X)"/>，则特征<img src="http://latex.codecogs.com/gif.latex?X"/>的信息增益定义为：<img src="http://latex.codecogs.com/gif.latex?IG(Y|X)=H(Y)-H(Y|X)"/>。</p>
+		<p>然而在我们这个划分集合的问题上，信息增益被定义为划分之前的集合的香农熵减去划分之后的各子集香农熵的和。</p>
+	</li>
+</ul>
+<p>有了这两个概念，现在我们要划分数据集，就是找到一个特征，按照这个特征取不同的值，将我们的数据集进行划分，并且让我们按照这种方式划分所得的信息增益最大，然后对划分好的子集也用相同的方法划分，直到划分好的子集里都是同一类别（这里的类别指的是你最后希望将数据成分的那几类）的或者数据中可用来划分的特征已经用完了，当特征用完了以后，如果子集里还是有不属于一类的数据，则用子集里多数数据的类别作为整个子集的类别，这也告诉我们决策树不是百分百正确的。关于决策树的使用就比较简单了，我就不在这里说了，感兴趣的可以看看《机器学习实战》第三章。</p>
+
+<h2>朴素贝叶斯</h2>
+<p>通过之前的学习我们会发现，无论是KNN算法还是决策树，最后都要求我们给出“该数据实例属于哪一类”这类问题的明确答案，但是分类器是会产生错误的，这是我们可以要求分类器给出一个最优的类别猜测结果，同时给出这个猜测的概率估计。朴素贝叶斯就是在做这样的工作时，首先会被想起的。朴素贝叶斯是贝叶斯决策理论的一部分，我们先简单介绍一下贝叶斯决策理论。贝叶斯决策理论在分类问题上的核心思想非常简单，如果一个数据实例属于类别1的概率大过属于其他类别的概率时，我们就认为这个数据实例是属于类别1的，一言蔽之，选择高概率对应的类别。再回到朴素贝叶斯，为什么是“朴素”的，这是因为整个算法基于最原始、最简单的，同时也是最神奇的假设：</p>
+<ul>
+	<li>特征之间在统计意义上是相互独立的</li>
+	<p>举个例子，就像你写作文，我们把每个词看成这篇文章的特征，你写的下一个词，和你之前写的任何一个词都是没有关系的，每个词出现的可能性是一样的，我们很明显知道这是不成立的，毕竟像“生日”和“悲伤”这两个词，就一般不会同时出现。</p>
+	<li>每个特征是同等重要的</li>
+	<p>我们也可以很轻易地知道这也是有问题的，还是拿文章举例，毕竟就我们日常生活而言，当你想快速了解一篇文章时，那些形容词、副词往往就没有动词、名词来得重要。</p>
+</ul>
+<p>虽然朴素贝叶斯是基于这两个显而易见的“错误”假设，但是出乎意料的是，在实际使用的过程中，它的效果往往不错，甚至很好，这是非常有意思的，十分值得去探究一番。</p>
+<p>至于如何使用它，实际上就是要我们去计算一个条件概率，假设我们的每个数据实例只有<img src="http://latex.codecogs.com/gif.latex?x"/>和<img src="http://latex.codecogs.com/gif.latex?y"/>两个特征，那我们的目标就是计算出当<img src="http://latex.codecogs.com/gif.latex?x"/>和<img src="http://latex.codecogs.com/gif.latex?y"/>给定以后它属于某一类<img src="http://latex.codecogs.com/gif.latex?ci"/>的条件概率<img src="http://latex.codecogs.com/gif.latex?p(ci|x1,y1)"/>，根据贝叶斯公式，有：</p>
+<p><img src="http://latex.codecogs.com/gif.latex?p(ci|x1,y1)=\frac{p(x1,y1|ci)p(ci)}{p(x1,y1)}"/></p>
+<p>其中<img src="http://latex.codecogs.com/gif.latex?p(x1,y1|ci)"/>是指在已知属于<img src="http://latex.codecogs.com/gif.latex?ci"/>类后，特征<img src="http://latex.codecogs.com/gif.latex?(x,y)"/>等于<img src="http://latex.codecogs.com/gif.latex?(x1,y1)"/>的概率，根据我们的假设，特征都是相互独立的，可以知道<img src="http://latex.codecogs.com/gif.latex?p(x1,y1|ci)"/>可以通过<img src="http://latex.codecogs.com/gif.latex?p(x1|ci)p(y1|ci)"/>计算，而<img src="http://latex.codecogs.com/gif.latex?p(ci)"/>是指属于任意一对<img src="http://latex.codecogs.com/gif.latex?(x,y)"/>属于类<img src="http://latex.codecogs.com/gif.latex?ci"/>的概率，分母部分<img src="http://latex.codecogs.com/gif.latex?p(x1,y1)"/>则是指任意<img src="http://latex.codecogs.com/gif.latex?(x,y)"/>等于<img src="http://latex.codecogs.com/gif.latex?(x1,y1)"/>的概率，但是由于不论算哪一个类别的条件概率，其分母部分都是一样的，而我们的目的只是比较各个条件概率的大小，通常我们不会去计算分母。</p>
