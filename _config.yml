@@ -47,7 +47,7 @@ url: https://longlongman.github.io/blog
 feed: /atom.xml
 favicon: http://jekyllrb.com/favicon.png
 JB:
-    categories_path:/categories.html
+  - categories_path:/categories.html
 
 #Nav config
 nav:
