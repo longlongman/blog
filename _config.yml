@@ -46,8 +46,6 @@ keywords: Jekyll Theme
 url: https://longlongman.github.io/blog
 feed: /atom.xml
 favicon: http://jekyllrb.com/favicon.png
-JB:
-  - categories_path:/categories.html
 
 #Nav config
 nav:
