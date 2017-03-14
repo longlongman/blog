@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 台大机器学习视频教程（机器学习基石）笔记（一）
+title: 台大视频教程（机器学习基石）笔记（一）
 date: 2017-2-8 21:21:00
 category: "courses"
 ---
