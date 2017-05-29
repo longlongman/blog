@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 七日阅读机器学习实战（一）
+title: 阅读机器学习实战（一）
 date: 2017-1-22 23:46:00
 category: "reading"
 ---
